@@ -1,0 +1,95 @@
+#title {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat (7, 1fr);
+    grid-template-rows: 1fr 0.75fr 1fr 0.5fr 1fr 0.5fr 1fr;
+    grid-gap: 5px;
+    height: 700px;
+    /*width; */
+}
+
+body {
+    background: lightsalmon;
+}
+
+h1 {
+    font-family: 'Fira Sans', Geneva, Verdana, sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+}
+
+h2 {
+    font-family: 'Fira Sans', Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+h3 {
+    font-family: 'Fira Sans', Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    grid-area: 1 / 2 / 2 / 7;
+}
+
+.play {
+    grid-area: 2 / 3 / 3 / 6;
+    font-family: 'Fira Sans', Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    background-color: red;
+    height: 60%;
+    padding: 2px;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.rpic {
+    height: 100px;
+    width: 100px;
+    grid-area: 5 / 2 / 6 / 3;
+    justify-self: left;
+}
+
+.rname {
+    grid-area: 6 / 2 / 7 / 3;
+    justify-self: left;
+}
+
+.ppic {
+    height: 100px;
+    width: 100px;
+    grid-area: 5 / 6 / 6 / 7;
+    justify-self: right;
+}
+
+.pname {
+    grid-area: 6 / 6 / 7 / 7;
+    justify-self: right;
+}
+
+.rock {
+    grid-area: 3 / 4 / 4 / 5;
+}
+
+.paper {
+    grid-area: 5 / 4 / 6 / 5;
+}
+
+.scissors {
+    grid-area: 7 / 4 / 8 / 5;
+}
+
+.choice {
+    height: 100px;
+    width: 100px;
+    justify-self: center;
+}
