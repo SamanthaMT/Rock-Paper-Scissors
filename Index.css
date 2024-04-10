@@ -76,6 +76,12 @@ header {
     justify-self: right;
 }
 
+.choice {
+    height: 100px;
+    width: 100px;
+    justify-self: center;
+}
+
 .rock {
     grid-area: 3 / 4 / 4 / 5;
 }
@@ -86,10 +92,4 @@ header {
 
 .scissors {
     grid-area: 7 / 4 / 8 / 5;
-}
-
-.choice {
-    height: 100px;
-    width: 100px;
-    justify-self: center;
 }

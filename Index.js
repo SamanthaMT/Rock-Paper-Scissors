@@ -12,21 +12,6 @@
 */
 
 
-/*
-function rockSelected(){
-
-}
-
-function paperSelected() {
-
-}
-
-function scissorsSelected() {
-
-}
-*/
-
-  
 function getComputerChoice() {
     let computerNumber = Math.floor(Math.random()*3);
     if(computerNumber === 0) {
@@ -40,10 +25,7 @@ function getComputerChoice() {
     }
   }
   
-  //getComputerChoice();
-  
-  //console.log(computerChoice);
-  
+
   function determineWinner(userChoice, computerChoice){
     if(userChoice === computerChoice){
       return 'Game is a tie';
@@ -67,13 +49,13 @@ function getComputerChoice() {
         } else {
           return 'User wins';
         }
+    
+
     }
   }
       
-  function playGame(userChoice = getUserChoice('Bomb'), computerChoice = getComputerChoice()){
-    console.log(`User's choice is ${userChoice}`);
-    console.log(`Computer's choice is ${computerChoice}`);
-    console.log(determineWinner(userChoice, computerChoice));
+    function playGame(userChoice, computerChoice = getComputerChoice()) {
+    alert(`User's choice is ${userChoice}`);
+    alert(`Computer's choice is ${computerChoice}`);
+    alert(determineWinner(userChoice, computerChoice));
   }
-  
-  playGame();
