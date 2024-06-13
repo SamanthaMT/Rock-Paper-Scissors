@@ -21,20 +21,25 @@
 
     <!--Robot Choices --->
 
-    <img class="robot rpic" src="https://m.media-amazon.com/images/I/61m0SZMyRzL._AC_SY355_.jpg">
+    <img class="robot rpic" src="./Images/robotPink.png">
     <h2 class="robot rname">Robot</h2>
     
     
     <!--Player Choices-->
 
 
-    <img class="player ppic" src="https://m.media-amazon.com/images/I/91W+sgIzcBL._AC_SY300_SX300_.jpg">
+    <img class="player ppic" src="./Images/humanPink.png">
     <h2 class="player pname">Player</h2>
 
-    <img class="choice rock" onclick="playGame('rock', getComputerChoice())" src="https://m.media-amazon.com/images/I/61Dxd9RAPjL._AC_SY550_.jpg"></img>
-    <img class="choice paper" onclick="playGame('paper', getComputerChoice())" src="https://m.media-amazon.com/images/I/61OorFhm6SL.__AC_SX300_SY300_QL70_ML2_.jpg"></img>
-    <img class="choice scissors" onclick="playGame('scissors', getComputerChoice())" src="https://m.media-amazon.com/images/I/71W24hIaYyL.__AC_SY300_SX300_QL70_ML2_.jpg"></img>
+    <img id='test' class="choice rock" onclick="playGame('rock', getComputerChoice())" src="./Images/rockPink.png"></img>
+    <img class="choice paper" onclick="playGame('paper', getComputerChoice())" src="./Images/paperPink.png"></img>
+    <img class="choice scissors" onclick="playGame('scissors', getComputerChoice())" src="./Images/scissorsPink.png"></img>
 
+    <!--Game Outcome-->
+    <span class="gameOutcome">
+      <h3 id="choicesMade">choices</h3>
+      <h2 id="declareWinner">winner</h2>
+    </span>
 
     </div>
 
