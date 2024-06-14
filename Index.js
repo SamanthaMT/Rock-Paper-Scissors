@@ -11,7 +11,7 @@
 }
 */
 
-
+//randomly assigns a choice for the computer
 function getComputerChoice() {
     let computerNumber = Math.floor(Math.random()*3);
     if(computerNumber === 0) {
@@ -27,7 +27,7 @@ function getComputerChoice() {
     }
   }
   
-
+//compares user and computer choices to determine the winner
   function determineWinner(userChoice, computerChoice){
     if(userChoice === computerChoice){
       return 'Game is a tie';
@@ -55,37 +55,44 @@ function getComputerChoice() {
 
     }
   }
+
+  let computerScore = 0;
+  let userScore = 0;
+
+  //highlights the user and computer choices to the user
+  let gameReset = true;
       
   function playGame(userChoice, computerChoice = getComputerChoice()) {
 
-    const choices = document.querySelectorAll('.choice');
-    choices.forEach(choice => {
-      choice.classList.add('choiceClicked');
-    });
+    if(gameReset === true) {
       
-    if(userChoice === computerChoice) {
-      const sameChoicePic = document.querySelectorAll(`.${userChoice}`);
-    sameChoicePic.forEach(choice => {
-      choice.classList.add('samePicClicked');
-    });
-    }
-    else {
-      const choicePic = document.querySelectorAll(`.${userChoice}`);
-      choicePic.forEach(choice => {
-        choice.classList.add('choicePicClicked');
+      const choices = document.querySelectorAll('.choice');
+      choices.forEach(choice => {
+        choice.classList.add('choiceClicked');
       });
+      
+      if(userChoice === computerChoice) {
+        const sameChoicePic = document.querySelectorAll(`.${userChoice}`);
+        sameChoicePic.forEach(choice => {
+          choice.classList.add('samePicClicked');
+        });
+      }
+      else {
+        const choicePic = document.querySelectorAll(`.${userChoice}`);
+        choicePic.forEach(choice => {
+          choice.classList.add('choicePicClicked');
+        });
 
-      const compChoicePic = document.querySelectorAll(`.${computerChoice}`);
-      compChoicePic.forEach(choice => {
-        choice.classList.add('compPicClicked');
-      });
-
+        const compChoicePic = document.querySelectorAll(`.${computerChoice}`);
+        compChoicePic.forEach(choice => {
+          choice.classList.add('compPicClicked');
+        });
+      }
+      displayWinnerMessage(userChoice, computerChoice);
     }
-
-    displayWinnerMessage(userChoice, computerChoice);
-
   }
 
+  //message displayed showing the results of the game
   function displayWinnerMessage(userChoice, computerChoice) {
 
     let winnerTitle = determineWinner(userChoice, computerChoice);
@@ -103,12 +110,14 @@ function getComputerChoice() {
       winnerBanner.forEach(banner => {
         banner.classList.add('userWins');
       })
+      userScore++;
     }
     else if(winnerTitle === "Computer wins") {
       choicesMade.innerText = `${computerChoice} beats ${userChoice}`;
       winnerBanner.forEach(banner => {
         banner.classList.add('computerWins');
       })
+      computerScore++;
     }
     else {
       choicesMade.innerText = `you both selected ${userChoice}`;
@@ -117,6 +126,39 @@ function getComputerChoice() {
       })
     }
 
-    
+    const playBtn = document.querySelectorAll('.play');
+    playBtn.forEach(button => {
+      button.classList.add('playReveal');
+    })
+
+    gameReset = false;
+
+  }
+
+  //reset the game
+  function resetGame() {
+
+    const computerScoreDisplay = document.querySelector('.rScore');
+    computerScoreDisplay.innerText = `Score: ${computerScore}`;
+
+    const userScoreDisplay = document.querySelector('.pScore');
+    userScoreDisplay.innerText = `Score: ${userScore}`;
+
+    const resetChoice = document.querySelectorAll('.choice');
+    resetChoice.forEach(choice => {
+      choice.classList.remove('choiceClicked', 'choicePicClicked', 'compPicClicked', 'samePicClicked');
+    })
+
+    const resetPlay = document.querySelectorAll('.play');
+    resetPlay.forEach(button => {
+      button.classList.remove('playReveal');
+    })
+
+    const resetWinner = document.querySelectorAll('.gameOutcome');
+    resetWinner.forEach(winner => {
+      winner.classList.remove('userWins', 'computerWins', 'draw');
+    })    
+
+    gameReset = true;
 
   }

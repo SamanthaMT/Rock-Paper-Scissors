@@ -1,3 +1,5 @@
+/* page layout, fonts, text sizing*/
+
 #title {
     display: inline-block;
     padding: 0px 20px;
@@ -39,6 +41,8 @@ header {
     grid-area: 1 / 2 / 2 / 7;
 }
 
+/*button & images */
+
 .play {
     grid-area: 2 / 3 / 3 / 6;
     font-family: 'Fira Sans', Geneva, Verdana, sans-serif;
@@ -51,6 +55,26 @@ header {
     text-align: center;
     align-self: top;
     justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.robotScore {
+    grid-area: 2 / 1 / 3 / 3;
+    color: rgb(196, 2, 196);
+    align-self: center;
+    text-align: center;
+    font-family: 'Fira Sans', Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+
+.playerScore {
+    grid-area: 2 / 6 / 3 / 8;
+    color: red;
+    align-self: center;
+    text-align: center;
+    font-family: 'Fira Sans', Geneva, Verdana, sans-serif;
+    font-weight: 400;
 }
 
 .rpic {
@@ -90,7 +114,8 @@ header {
     width: 100px;
     justify-self: center;
     align-self: center;
-    border-radius: 5px;
+    border-radius: 18px;
+    border: solid black 1px;
 }
 
 .choice:hover {
@@ -111,6 +136,8 @@ header {
     grid-area: 7 / 4 / 8 / 5;
 }
 
+/*game play features*/
+
 .choiceClicked {
     visibility: hidden;
 }
@@ -118,17 +145,16 @@ header {
 .choicePicClicked {
     height: 140px;
     width:140px;
-    transition: height 10s, width 10s;
+    transition: height 8s, width 8s;
     border: dotted red 8px;
     border-radius: 25px;
     visibility: visible;
-    /*fix transitions!!*/
 }
 
 .compPicClicked {
     height: 140px;
     width:140px;
-    transition: height 10s, width 10s;
+    transition: height 8s, width 8s;
     border: dotted rgb(196, 2, 196) 8px;
     border-radius: 25px;
     visibility: visible;
@@ -137,7 +163,7 @@ header {
 .samePicClicked {
     height: 140px;
     width:140px;
-    transition: height 10s, width 10s;
+    transition: height 8s, width 8s;
     border: dotted rgb(20, 169, 249) 8px;
     border-radius: 25px;
     visibility: visible;
@@ -146,11 +172,13 @@ header {
 .choicePicClicked:hover {
     border: dotted red 8px;
     border-radius: 25px;
+    cursor: default;
 }
 
 .compPicClicked:hover {
     border: dotted rgb(196, 2, 196) 8px;
     border-radius: 25px;
+    cursor: default;
 }
 
 .gameOutcome {
@@ -172,7 +200,7 @@ header {
 .userWins {
     border: solid red 6px;
     opacity: 1;
-    transition: opacity 10s, border 5s;
+    transition: opacity 6s, border 5s;
     transition-delay: 5s;
     visibility: visible;
 }
@@ -180,7 +208,7 @@ header {
 .computerWins {
     border:solid rgb(196, 2, 196) 6px;
     opacity: 1;
-    transition: opacity 10s, border 5s;
+    transition: opacity 6s, border 5s;
     transition-delay: 5s;
     visibility: visible;
 }
@@ -188,7 +216,46 @@ header {
 .draw {
     border:solid rgb(20, 169, 249) 6px;
     opacity: 1;
-    transition: opacity 10s, border 5s;
+    transition: opacity 6s, border 5s;
     transition-delay: 5s;
     visibility: visible;
+}
+
+.playReveal {
+    opacity: 1;
+    transition: opacity 6s;
+    transition-delay: 5s;
+    visibility: visible;
+}
+
+.play:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/*reset game*/
+
+.resetChoice {
+    visibility: visible;
+    border: black 1px solid;
+    border-radius: 18px;
+    height: 100px;
+    width: 100px;
+    transition: height 0s, width 0s;
+}
+
+.resetChoice:hover {
+    cursor: pointer;
+    border: 10px red solid;
+    border-radius: 25px;
+}
+
+.resetPlay {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.resetWinner {
+    visibility: hidden;
+    opacity: 0;
 }
