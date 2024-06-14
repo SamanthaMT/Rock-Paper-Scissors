@@ -17,7 +17,15 @@
         <div id="title"><h1>Rock</h1></div><div id="title"><h1>Paper</h1></div><div id="title"><h1>Scissors</h1></div>
     </header>
 
-    <button class="play">Play!</button>
+    <button class="play" onclick="resetGame()">Play Again</button>
+
+    <span class="robotScore">
+      <h2 class="rScore">Score: 0</h3>
+    </span>
+
+    <span class="playerScore">
+      <h2 class="pScore">Score: 0</h3>
+    </span>
 
     <!--Robot Choices --->
 
@@ -31,7 +39,7 @@
     <img class="player ppic" src="./Images/humanPink.png">
     <h2 class="player pname">Player</h2>
 
-    <img id='test' class="choice rock" onclick="playGame('rock', getComputerChoice())" src="./Images/rockPink.png"></img>
+    <img class="choice rock" onclick="playGame('rock', getComputerChoice())" src="./Images/rockPink.png"></img>
     <img class="choice paper" onclick="playGame('paper', getComputerChoice())" src="./Images/paperPink.png"></img>
     <img class="choice scissors" onclick="playGame('scissors', getComputerChoice())" src="./Images/scissorsPink.png"></img>
 
